@@ -27,6 +27,10 @@ public class FoodTABLE {
 
     public long addNewFood(String strFood, String strSource, String strPrice) {
         ContentValues objContentValues = new ContentValues();
-        return 0;
+        objContentValues.put(COLUMN_FOOD, strFood);
+        objContentValues.put(COLUMN_SOURCE, strSource);
+        objContentValues.put(COLUMN_PRICE, strPrice);
+        return readSqLiteDatabase.insert(FOOD_TABLE, null, objContentValues);
     }
+
 }
